@@ -1,0 +1,8 @@
+<div class="jumbotron">
+  <h2><%= gettext "Welcome to %{name}!", name: "Vocial" %></h2>
+  <p class="lead">A social voting app!</p>
+  <p>To create a new account, <%= link "click here", to: user_path(@conn, :new) %></p>
+  <p>To view the most recent polls, <%= link "click here", to: vote_path(@conn, :index) %></p>
+</div>
+
+<%= render(VocialWeb.SharedView, "_chat.html", messages: @messages, chatroom: "lobby") %>

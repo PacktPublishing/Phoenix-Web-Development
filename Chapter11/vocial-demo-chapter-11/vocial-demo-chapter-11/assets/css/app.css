@@ -1,0 +1,32 @@
+/* This file is for your main application css. */
+span.help-block {
+  color: #f00;
+}
+.user-list {
+  overflow-y: scroll;
+  overflow-x: hidden;
+  max-height: 500px;
+}
+.chat-window {
+  min-height: 200px;
+}
+.chat-display {
+  overflow-y: scroll;
+  max-height: 500px;
+}
+.user-list .idle {
+  color: #888;
+}
+.chat-display .author {
+  color: #f00;
+}
+.name-input {
+  margin-bottom: 10px;
+}
+.chat-display .status {
+  color: #888;
+  font-style: italic;
+}
+.hidden {
+  display: none !important;
+}

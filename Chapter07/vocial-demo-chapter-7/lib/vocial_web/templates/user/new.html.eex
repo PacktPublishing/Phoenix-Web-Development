@@ -1,0 +1,3 @@
+<h2>User Signup</h2>
+<hr />
+<%= render("form.html", %{ user: @user, conn: @conn }) %>

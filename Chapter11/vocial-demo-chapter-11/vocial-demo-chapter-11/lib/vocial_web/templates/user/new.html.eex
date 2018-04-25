@@ -1,0 +1,7 @@
+<h2>User Signup</h2>
+<hr />
+<%= link "Sign Up with Twitter", to: "/auth/twitter" %>
+<br />
+<%= link "Sign Up with Google", to: "/auth/google" %>
+<hr />
+<%= render("form.html", %{ user: @user, conn: @conn }) %>
