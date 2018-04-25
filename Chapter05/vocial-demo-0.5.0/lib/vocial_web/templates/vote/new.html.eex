@@ -1,0 +1,16 @@
+<div class="poll-form">
+  <h2>New Poll</h2>
+  <%= form_for @poll, vote_path(@conn, :create), fn f -> %>
+    <label>
+      Title:<br />
+      <%= text_input f, :title %>
+    </label>
+    <br />
+    <label>
+      Options (separated by commas):<br />
+      <input type="text" name="options" />
+    </label>
+    <br />
+    <%= submit "Create" %>
+  <% end %>
+</div>

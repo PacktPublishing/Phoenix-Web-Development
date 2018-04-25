@@ -1,0 +1,18 @@
+<div class="poll-display">
+  <h2><%= link "Poll: #{@poll.id}. #{@poll.title}", to: vote_path(@conn, :show, @poll) %></h2>
+  
+  <%= if @poll.image do %>
+    <div class="image-display">
+      <img src="<%= @poll.image.url %>" alt="<%= @poll.image.alt %>" style="width: 350px;" />
+      <br />
+      <small><%= @poll.image.caption %></small>
+    </div>
+  <% end %>
+
+  <%= for option <- Enum.sort(@poll.options, &(&1.id >= &2.id)) do %>
+    <strong><%= option.title %></strong>:
+    <span id="vote-count-<%= option.id %>" class="vote-count"><%= option.votes %></span>
+    <a href="/options/<%= option.id %>/vote" class="btn btn-primary vote-button-manual" data-option-id="<%= option.id %>">Vote</a>
+    <br />
+  <% end %>
+</div>

@@ -1,0 +1,10 @@
+<i id="enable-polls-channel" data-poll-id="<%= @poll.id %>"></i>
+
+<button id="polls-ping" class="btn btn-primary">Ping Websocket</button>
+
+<%= render("_poll.html", %{ poll: @poll }) %>
+
+<canvas id="poll-chart" width="400" height="400"></canvas>
+
+<script type="text/javascript">
+</script>

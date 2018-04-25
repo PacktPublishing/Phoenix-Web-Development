@@ -1,0 +1,23 @@
+<br/><br/>
+<div class="chat-window container well" id="enable-chat-channel" data-chatroom="<%= @chatroom %>">
+  <div class="row col-md-12">
+    Your name:
+    <input type="text" class="form-control author-input" placeholder="Name" />
+  </div>
+  <div class="row col-md-12">
+    <h3>Chat</h3>
+    <ul class="list-unstyled chat-messages">
+      <%= for message <- @messages do %>
+        <li><span class="author">&lt;<%= message.author %>&gt; <span class="message"><%= message.message %></span>
+      <% end %>
+    </ul>
+  </div>
+  <div class="row">
+    <div class="col-md-10">
+      <input type="text" class="form-control chat-input"/>
+    </div>
+    <div class="col-md-2">
+      <button class="btn btn-primary chat-send">Send</button>
+    </div>
+  </div>
+</div>

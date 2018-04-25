@@ -1,0 +1,3 @@
+<%= for poll <- @polls do %>
+  <%= render("_poll.html", %{ poll: poll }) %>
+<% end %>
