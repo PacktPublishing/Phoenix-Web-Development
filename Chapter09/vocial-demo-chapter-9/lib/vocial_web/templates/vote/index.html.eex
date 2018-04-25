@@ -1,0 +1,7 @@
+<div class="ip-address">
+  Your IP Address has been recorded as <%= Enum.join(Tuple.to_list(@conn.remote_ip), ".") %>
+</div>
+
+<%= for poll <- @polls do %>
+  <%= render("_poll.html", %{ poll: poll, conn: @conn }) %>
+<% end %>

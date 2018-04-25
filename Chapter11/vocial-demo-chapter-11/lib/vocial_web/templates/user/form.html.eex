@@ -1,0 +1,25 @@
+<div>
+  <%= form_for @user, user_path(@conn, :create), fn f -> %>
+     <%= label f, :username, "Username:" %>
+     <br />
+     <%= text_input f, :username %>
+     <%= error_tag f, :username %>
+     <br />
+     <%= label f, :email, "Email:" %>
+     <br />
+     <%= text_input f, :email %>
+     <%= error_tag f, :email %>
+     <br />
+     <%= label f, :password, "Password:" %>
+     <br />
+     <%= password_input f, :password %>
+     <%= error_tag f, :password %>
+     <br />
+     <%= label f, :password_confirmation, "Confirm your password:" %>
+     <br />
+     <%= password_input f, :password_confirmation %>
+     <%= error_tag f, :password_confirmation %>
+     <br />
+     <%= submit "Sign Up" %>
+  <% end %>
+</div>
