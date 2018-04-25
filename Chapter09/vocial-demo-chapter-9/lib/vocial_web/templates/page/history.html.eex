@@ -1,0 +1,13 @@
+<div class="container">
+  <h2>Chat History</h2>
+  <ul class="list-unstyled">
+    <%= for log <- @logs do %>
+      <li>
+        <em>#<%= log.topic %></em>
+        &lt;<%= log.username %>&gt;
+        <strong><%= log.status %></strong>
+        at <%= log.timestamp %>
+      </li>
+    <% end %>
+  </ul>
+</div>

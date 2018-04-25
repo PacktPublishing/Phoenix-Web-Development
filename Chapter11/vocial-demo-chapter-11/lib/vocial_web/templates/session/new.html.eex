@@ -1,0 +1,19 @@
+<div>
+  <%= form_tag session_path(@conn, :create) do %>
+    <label>
+      Username:<br />
+      <input type="text" name="username">
+    </label>
+    <br />
+    <label>
+      Password:<br />
+      <input type="password" name="password">
+    </label>
+    <br />
+    <%= submit "Login" %>
+    <hr />
+    <%= link "Login with Twitter", to: "/auth/twitter" %>
+    <br />
+    <%= link "Login with Google", to: "/auth/google" %>
+  <% end %>
+</div>

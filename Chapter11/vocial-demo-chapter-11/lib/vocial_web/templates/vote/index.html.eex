@@ -1,0 +1,22 @@
+<div class="ip-address">
+  Your IP Address has been recorded as <%= Enum.join(Tuple.to_list(@conn.remote_ip), ".") %>
+</div>
+
+<%= for poll <- @polls do %>
+  <%= render("_poll.html", %{ poll: poll, conn: @conn }) %>
+<% end %>
+
+<br/>
+<div>
+  <%= if @opts.include_prev_page do %>
+    <div class="pull-left">
+      <%= link "<< Previous Page", to: vote_path(@conn, :index, [page: (@opts.page - 1), per_page: @opts.per_page]) %>
+    </div>
+  <% end %>
+  
+  <%= if @opts.include_next_page do %>
+    <div class="pull-right">
+      <%= link "Next Page >>", to: vote_path(@conn, :index, [page: (@opts.page + 1), per_page: @opts.per_page]) %>
+    <div class="pull-right">
+  <% end %>
+</div>

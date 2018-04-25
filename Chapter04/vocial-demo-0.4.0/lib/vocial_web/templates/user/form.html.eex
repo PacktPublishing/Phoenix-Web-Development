@@ -1,0 +1,13 @@
+<div>
+  <%= form_for @user, user_path(@conn, :create), fn f -> %>
+     <%= label f, :username, "Username:" %>
+     <br />
+     <%= text_input f, :username %>
+     <br />
+     <%= label f, :email, "Email:" %>
+     <br />
+     <%= text_input f, :email %>
+     <br />
+     <%= submit "Sign Up" %>
+  <% end %>
+</div>
